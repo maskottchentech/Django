@@ -11,10 +11,10 @@ def signupform(request):
 			password = form.cleaned_data.get('password')
 			user = authenticate(username=username,password=password)
 			login(request,user)
-			return redirect(HomeView)
+			return redirect(success)
 	else:
 		form = SignupUser()
 	return render(request,'accounts/signup.html',{'form':form})
 
-def HomeView(request):
+def success(request):
 	return render(request,'webpages/home.html')
