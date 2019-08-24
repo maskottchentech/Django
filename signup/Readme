@@ -1,1 +1,18 @@
 this is the main project of django singup form without custom design
+
+Create project by using following commands
+1. django-admin startproject signup
+2. cd signup
+3. python manage.py startapp myapp
+4. python manage.py runserver
+
+Please do not forget to use following commands
+1. python manage.py makemigrations
+2. python migrate
+3. python create superuser
+4. username = 'admin' # You can name it of your choice
+5. email = leave it blank
+6. password = 1234  # You can create it of your choice
+7. password = 1234
+8. press Y for yes and runserver again
+9. python manage.py runserver
