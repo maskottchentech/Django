@@ -13,7 +13,7 @@ def Userlogin(request):
 			user = authenticate(username=username,password=password)
 			if user.is_active:
 				login(request,user)
-				return redirect(HomeView)
+				return redirect(Homepage)
 	else:
 		loginForm = UserLoginForm()
 	return render(request,'login.html',{'loginForm':loginForm})
@@ -45,5 +45,5 @@ def userprofile(request,pk=None):
 	print(user)
 	return render(request,'userprofile.html',{'user':user})
 
-def HomeView(request):
+def Homepage(request):
 	return render(request,'home.html',{'form':form})
