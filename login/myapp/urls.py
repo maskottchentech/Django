@@ -1,0 +1,13 @@
+from django.urls import path
+from . import views
+
+app_name = 'myapp'
+
+urlpatterns = [
+    path('Signup/', views.signupform,name='signup'),
+    path('login/', views.UserLogin,name='login'),
+    path('profile/', views.userprofile,name='profile'),
+    path('home/', views.Homepage,name='home'),
+
+    
+    ]
