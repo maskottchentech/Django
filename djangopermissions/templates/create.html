@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+<form method="post">
+	{% csrf_token %}
+	{{postform.as_p}}
+	<button type="submit">Submit</button>
+	<button><a href="{% url 'home' %}">Back</a></button>
+</form>
+</body>
+</html>

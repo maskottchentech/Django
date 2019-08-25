@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>profile</title>
+</head>
+<body>
+	<label>Username = </label>{{user}}<br>
+	<label>First name = </label>{{user.first_name}}<br>
+	<label>Last name = </label>{{user.last_name}}<br>
+	<label>Mail = </label>{{user.email}}<br>
+
+	<!-- To view permissions the user have use the
+		following command-->
+
+		<div>{{ perms.myapp }}</div>
+		<button><a href="{% url 'home'%}">Back</a></button>
+	</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Post View</title>
+</head>
+<body>
+	
+
+
+<!--<div>{{ perms.myapp }}</div>-->
+
+{% if perms.myapp.view_article %}
+{% for a in post %}
+
+{{a.title}}<br>
+{{a.description}}<br>
+{% endfor %}
+{% else %}
+{{user.username}}
+    <p>You don't have permission to do anything in the myapp.</p>
+
+
+
+{% endif %}
+<button><a href="{% url 'home'%}">Back</a></button>
+
+</body>
+</html>
