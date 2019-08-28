@@ -45,5 +45,6 @@ def userprofile(request,pk=None):
 	print(user)
 	return render(request,'userprofile.html',{'user':user})
 
+@login_required
 def Homepage(request):
 	return render(request,'home.html')
