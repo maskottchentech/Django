@@ -46,4 +46,4 @@ def userprofile(request,pk=None):
 	return render(request,'userprofile.html',{'user':user})
 
 def Homepage(request):
-	return render(request,'home.html',{'form':form})
+	return render(request,'home.html')
