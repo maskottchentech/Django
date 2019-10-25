@@ -27,7 +27,7 @@ def c(request):
 	else:
 		form = formdata()
 
-	return render(request,'c.html',{'form':form})
+	return render(request,'forms.html',{'form':form})
 
 
 # Create your views here.
