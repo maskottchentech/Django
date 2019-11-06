@@ -18,7 +18,7 @@ def Userlogin(request):
 		loginForm = UserLoginForm()
 	return render(request,'login.html',{'loginForm':loginForm})
 
-def UserRegistration(request):
+def signupform(request):
 	if request.method == 'POST':
 		UserRegister = SignupUser(request.POST or None)
 		if UserRegister.is_valid():
