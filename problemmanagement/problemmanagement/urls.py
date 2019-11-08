@@ -23,7 +23,7 @@ urlpatterns = [
     
     path('admin/', admin.site.urls),
     path('',views.indexpage),
-   # path('new/',views.newpage),
+    path('new/',views.newpage),
     path('search/',views.search),
 ]
 
