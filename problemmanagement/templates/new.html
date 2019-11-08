@@ -1,0 +1,44 @@
+<html>
+
+<body>
+      
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+      
+        
+        
+    <table class="table" >
+            <thead class="thead-dark">
+              <tr>
+                <th scope="col">Serial No.</th>
+                <th scope="col">Name</th>
+                <th scope="col">Room</th>
+                <th scope="col">Floor</th>
+                <th scope="col">Branch</th>
+                <th scope="col">Date</th>
+                <th scope="col">Time</th>
+                <th scope="col">Status</th>
+              </tr>
+            </thead>
+            <tbody>
+                    {% for a in data %}
+              <tr>
+                    
+                <th scope="row">{{a.id}}</th>
+                <td>{{a.name}}</td>
+                <td>{{a.room}}</td>
+                <td>{{a.floor}}</td>
+                <td>{{a.branch}}</td>
+                <td>{{a.date}}</td>
+                <td>{{a.time}}</td>
+                <td>{{a.status}}</td>
+               
+              </tr>
+       
+              
+              {% endfor %}
+             
+            </tbody>
+          </table>
+
+</body>
+</html>

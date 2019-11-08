@@ -1,0 +1,49 @@
+<html>
+
+<head>
+
+</head>
+
+<body>
+        {% block content %}
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+ 
+    <form method="get">
+        {{ filter.form.as_p }}
+        <button type="submit">Search</button>
+      </form>
+      <table class="table">
+            <thead class="thead-dark">
+              <tr>
+                <th scope="col">Id</th>
+                <th scope="col">Name</th>
+                <th scope="col">Room</th>
+                <th scope="col">Floor</th>
+                <th scope="col">Date</th>
+                <th scope="col">Time</th>
+                <th scope="col">Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for user in filter.qs %}
+                <tr>
+                  <td scope="row">{{ user.id }}</td>
+                  <td>{{ user.name }}</td>
+                  <td>{{ user.room }}</td>
+                  <td>{{ user.floor }}</td>
+                  <td>{{ user.date }}</td>
+                  <td>{{ user.time }}</td>
+                  <td>{{ user.status }}</td>
+                  
+                </tr>
+              {% empty %}
+                <tr>
+                  <td colspan="5">No data</td>
+                </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        {% endblock %}
+</body>
+</html>
