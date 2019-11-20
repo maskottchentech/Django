@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html>
+<style type="text/css">
+.form_box{
+border: 2px solid black;
+width: 50%;
+margin-left: 25%;
+}
+
+</style>
+<head>
+	<title>Poll</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+	<div class="form_box">
+<nav class="navbar navbar-dark bg-primary">
+ <h3 class="pl-5">Movies Poll</h3>
+</nav>
+<form method="POST">
+	{% csrf_token %}
+	
+	{{form.as_p}}
+	<button type="submit" class="btn btn-primary btn-lg">Continue</button>
+	<!--<button type="submit">Continue</button>-->
+</form>
+</div>
+</body>
+</html>
