@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>jQuery Form Example</title>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css"/>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+</head>
+  <body>
+    <div class="col-sm-6 col-sm-offset-3">
+      <h1>Django Form</h1>
+
+      <form action="{% url 'readval' %}" method="POST" id="form-val" >
+
+          <label for="name">Name</label>
+          <input
+            type="text"
+            class="form-control"
+            id="name"
+            name="name"
+            placeholder="Full Name"
+          />
+       
+          <label for="email">Email</label>
+          <input
+            type="text"
+            class="form-control"
+            id="email"
+            name="email"
+            placeholder="email@example.com"
+          />
+        
+          <label for="message">Message</label>
+          <input
+            type="text"
+            class="form-control"
+            id="message"
+            name="message"
+            placeholder="Any Message"
+          />
+        
+        <button type="submit" class="btn btn-success">
+          Submit
+        </button>
+      </form>
+
+    </div>
+
+<script>
+
+    $(document).ready(function (){
+
+    $("#form-val").submit(function (event){
+        event.preventDefault();
+        var formData = {
+            name: $("#name").val(),
+            email: $("#email").val(),
+            message: $("#message").val(),
+            csrfmiddlewaretoken: '{{ csrf_token }}'
+        } ;
+
+        console.log(formData)
+        $.ajax({
+            type: "POST",
+            url: "readval/",
+            data: formData,
+            dataType: "json",
+            success: function (response) {
+                console.log(response['response']);
+            },
+            error: function (response) {
+                // alert the error if any error occured
+                alert("Please fill all values");
+            }
+
+        })
+    }) ;   
+
+    });
+
+</script>
+
+  </body>
+</html>
